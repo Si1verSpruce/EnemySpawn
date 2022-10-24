@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject _creature;
+    [SerializeField] private Creature _spawningCreature;
 
     public void Spawn()
     {
-        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + _creature.transform.localScale.y, transform.position.z);
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + _spawningCreature.transform.localScale.y, transform.position.z);
 
-        Instantiate(_creature, spawnPosition, Quaternion.identity);
+        Instantiate(_spawningCreature, spawnPosition, Quaternion.identity);
     }
 }
